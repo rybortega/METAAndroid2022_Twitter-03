@@ -11,6 +11,7 @@ public class User {
     public String screenName;
     public String profileImageUrl;
 
+
     //constructor needed by parcel
     public User(){};
 

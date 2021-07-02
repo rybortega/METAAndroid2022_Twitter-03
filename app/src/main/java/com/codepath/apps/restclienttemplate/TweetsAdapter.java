@@ -1,6 +1,7 @@
 package com.codepath.apps.restclienttemplate;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -51,11 +52,9 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
     @Override
 
     public int getItemCount() {
+        Log.e("itemcount", String.valueOf(tweets.size()));
         return tweets.size();
     }
-
-
-
 
     //define a viewholder
     public class ViewHolder extends RecyclerView.ViewHolder{
@@ -63,12 +62,14 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
         TextView tvBody;
         TextView tvProfileName;
         TextView tvHandleName;
+        ImageView tweetMedia;
         public ViewHolder(@NonNull @NotNull View itemView) {
             super(itemView);
             ivProfileImage = itemView.findViewById(R.id.ivProfileImage);
             tvBody = itemView.findViewById(R.id.tvBody);
             tvProfileName = itemView.findViewById(R.id.tvProfileName);
             tvHandleName = itemView.findViewById(R.id.tvHandleName);
+            tweetMedia = itemView.findViewById(R.id.tweetMedia);
         }
 
         public void bind(Tweet tweet) {
@@ -76,6 +77,14 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
             tvProfileName.setText(tweet.user.name);
             tvHandleName.setText("@" + tweet.user.screenName);
             Glide.with(context).load(tweet.user.profileImageUrl).into(ivProfileImage);
+
+            if(tweet.image != "null") {
+                Glide.with(context).load(tweet.image).into(tweetMedia);
+                tweetMedia.setVisibility(View.VISIBLE);
+            }else{
+                tweetMedia.setVisibility(View.GONE);
+            }
+
         }
     }
 
