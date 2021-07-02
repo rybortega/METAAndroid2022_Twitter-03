@@ -15,7 +15,7 @@ public class Tweet {
     public String body;
     public String createdAt;
     public User user;
-    public String image = "null";
+    public String image;
 
 
     // the empty constructor is needed by parcel

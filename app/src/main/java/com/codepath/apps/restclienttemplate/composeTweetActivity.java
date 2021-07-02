@@ -66,6 +66,7 @@ public class composeTweetActivity extends AppCompatActivity {
                         try {
                             Tweet tweet = Tweet.fromJson(json.jsonObject);
                             Log.i(TAG, "Published Tweet says: " +tweet);
+
                             Intent intent = new Intent();
                             intent.putExtra("tweet", Parcels.wrap(tweet));
 
@@ -83,7 +84,7 @@ public class composeTweetActivity extends AppCompatActivity {
 
                     @Override
                     public void onFailure(int statusCode, Headers headers, String response, Throwable throwable) {
-                        Log.e(TAG, "onFailure to publish tweet", throwable);
+                        Log.e(TAG, "onFailure to publish tweet" + response, throwable);
                     }
                 });
 
