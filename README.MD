@@ -46,7 +46,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<blockquote class="imgur-embed-pub" lang="en" data-id="a/zqpNEak" data-context="false" ><a href="//imgur.com/a/zqpNEak"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+https://imgur.com/a/zqpNEak
 
 GIF created with [Kap](https://getkap.co/).
 
